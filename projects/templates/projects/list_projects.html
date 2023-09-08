@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Document</title>
-    </head>
-    <body>
+{% extends 'base.html' %}
+{% block content %}
         <main>
             <div>
                 <h1>My Projects</h1>
@@ -23,6 +19,7 @@
                                         <a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
                                     </td>
                                     <td>{{ project.tasks.all|length }}</td>
+                                    <td>{{ project.name }}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>
@@ -32,5 +29,4 @@
                 {% endif %}
             </div>
         </main>
-    </body>
-</html>
+{% endblock content %}

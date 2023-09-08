@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+
     <main>
         <div>
             <h1>My Tasks</h1>
-            <p>
-                <a href="{% url 'create_project' %}">Create a new project</a>
-            </p>
+           
             {% if tasks|length == 0 %}
                 <p>You have no tasks</p>
             {% else %}
@@ -38,6 +32,4 @@
             {% endif %}
         </div>
     </main>
-
-</body>
-</html>
+{% endblock content %}
